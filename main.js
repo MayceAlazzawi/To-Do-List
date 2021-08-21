@@ -20,7 +20,7 @@ theAddButton.onclick = function () {
 
   } else {
 
-   
+    
 
     // Create Main Span Element
     let mainSpan = document.createElement("span");
@@ -54,7 +54,17 @@ theAddButton.onclick = function () {
 
     // Empty The Input
     theInput.value = '';
-
-    
 };
 }
+document.addEventListener('click', function (e) {
+
+  // Delete Task
+  if (e.target.className == 'delete') {
+
+    // Remove Current Task
+    e.target.parentNode.remove();
+}
+if(e.target.classList.contains('task-box')){
+  e.target.classList.toggle('finished');
+}
+})
